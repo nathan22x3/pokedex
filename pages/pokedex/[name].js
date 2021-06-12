@@ -6,7 +6,7 @@ const PokemonDetails = ({ data }) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await axios('https://pokeapi.co/api/v2/pokemon?limit=100');
+  const res = await axios('https://pokeapi.co/api/v2/pokemon?limit=300');
   const { results } = await res.data;
 
   const paths = results.map(({ name }) => ({
