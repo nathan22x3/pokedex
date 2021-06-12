@@ -1,0 +1,47 @@
+@use '../styles/abstracts/colors' as *;
+
+$pokeball-size: 9rem;
+$types: (
+  grass: $clr-grass,
+  fire: $clr-fire,
+  water: $clr-water,
+  electric: $clr-electric,
+  psychic: $clr-psychic,
+  rock: $clr-rock,
+);
+
+.container {
+  position: relative;
+  display: block;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+
+  @mixin background-pattern {
+    position: absolute;
+    content: '';
+
+    width: $pokeball-size;
+    height: $pokeball-size;
+    background-image: url('/images/pokeball.svg');
+    background-size: contain;
+  }
+
+  &::before {
+    @include background-pattern;
+    top: -25%;
+    right: -10%;
+  }
+
+  &::after {
+    @include background-pattern;
+    top: -105%;
+    left: -30%;
+  }
+
+  span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+}

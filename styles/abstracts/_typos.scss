@@ -1,0 +1,14 @@
+$typos: (
+  h1: 3.4rem,
+  h2: 2.4rem,
+  h3: 1.875rem,
+  h4: 1.6rem,
+  p: 1.6rem,
+  span: 1.4rem,
+);
+
+@each $typo, $value in $typos {
+  #{$typo} {
+    font-size: $value;
+  }
+}

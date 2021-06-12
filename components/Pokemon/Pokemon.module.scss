@@ -1,0 +1,118 @@
+@use '../../styles/abstracts/colors' as *;
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.header {
+  position: relative;
+  color: #ffffff;
+
+  & > div {
+    &:first-child {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    &:last-child {
+      display: grid;
+      grid-template-areas:
+        'name id'
+        'types id'
+        'image image';
+      grid-template-columns: 1fr auto;
+      row-gap: 1rem;
+    }
+  }
+
+  .id {
+    grid-area: id;
+    place-self: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  .name {
+    grid-area: name;
+    text-transform: capitalize;
+  }
+
+  .types {
+    grid-area: types;
+    display: flex;
+    column-gap: 0.5rem;
+
+    span {
+      padding: 0.25em 1.5em;
+      border-radius: 1em;
+
+      text-transform: capitalize;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: #ffffff44;
+    }
+  }
+
+  .pokeball {
+    grid-area: image;
+    place-self: center;
+  }
+}
+
+.body {
+  flex: 1;
+  position: relative;
+  border-top-left-radius: 1.6rem;
+  border-top-right-radius: 1.6rem;
+  box-shadow: 0 0 0 3rem #ffffff;
+  background-color: #ffffff;
+
+  .image {
+    position: absolute;
+    top: -20rem;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    z-index: 1;
+  }
+
+  & > section {
+    position: relative;
+    display: flex;
+    padding: 2.5rem 0 4rem;
+    background-color: #ffffff;
+    font-weight: bold;
+
+    & > * {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+
+      * {
+        font-size: 1.5rem;
+      }
+    }
+
+    .title {
+      flex: 3;
+      color: $clr-label;
+    }
+
+    .value {
+      flex: 7;
+
+      .gender {
+        display: flex;
+        column-gap: 2rem;
+
+        div {
+          display: flex;
+          column-gap: 0.5rem;
+        }
+      }
+    }
+  }
+}

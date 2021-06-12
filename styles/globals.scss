@@ -1,0 +1,53 @@
+@use 'abstracts/colors' as *;
+@use 'abstracts/typos' as *;
+
+:root {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Rubik, sans-serif;
+}
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#__next {
+  width: 100vw;
+  max-width: 48rem;
+  overflow-x: hidden;
+
+  & > * {
+    &:first-child {
+      position: relative;
+      padding: 4rem 3rem 3rem;
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.button {
+  cursor: pointer;
+}
+
+@each $type, $value in $types {
+  [data-color='#{$type}'] {
+    background-color: $value;
+    &[class*='Button'] {
+      box-shadow: 0 1.25rem 1.5rem -0.5rem rgba($value, 0.75);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use '../styles/abstracts/colors' as *;
+
+.container {
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
+
+  padding: 1rem 1.5rem;
+  border-radius: 2.5rem;
+  margin-bottom: 4rem;
+  background-color: $clr-input;
+
+  input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $clr-label;
+    }
+  }
+}

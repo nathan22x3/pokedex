@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & > div {
+    position: unset !important;
+  }
+}
+
+.image {
+  position: relative !important;
+  height: unset !important;
+  object-fit: contain;
+}
+
+.caption {
+  text-align: center;
+  font-size: 1.2rem;
+}

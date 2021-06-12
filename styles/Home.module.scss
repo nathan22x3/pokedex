@@ -1,0 +1,14 @@
+.container {
+  background: 22rem -12rem url('/images/pokeball-fill.svg') no-repeat;
+  background-size: 22rem;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}

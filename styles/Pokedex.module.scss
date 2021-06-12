@@ -1,0 +1,34 @@
+.container {
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    span {
+      position: relative;
+
+      &:last-child {
+        &::before {
+          position: absolute;
+          content: '';
+          transform: translate(-45%, -45%);
+
+          background: url('/images/pokeball-fill.svg') no-repeat;
+          width: 30rem;
+          height: 30rem;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
