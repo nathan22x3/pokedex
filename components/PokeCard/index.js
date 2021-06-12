@@ -6,7 +6,7 @@ import { idFormatter } from 'utils';
 const PokeCard = ({ id, name, types, image }) => {
   return (
     <Link href={`/pokedex/${name}`}>
-      <a id={name} className={styles.container} data-color={types[0].type.name}>
+      <a className={styles.container} data-color={types[0].type.name}>
         <span className={styles.id}>{idFormatter(id)}</span>
         <h3 className={styles.name}>{name}</h3>
         <div className={styles.types}>

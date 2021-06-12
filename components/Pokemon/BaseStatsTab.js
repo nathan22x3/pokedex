@@ -1,6 +1,7 @@
 import { body as animation } from '@components/Pokemon/animation';
 import styles from '@components/Pokemon/Pokemon.module.scss';
 import { motion } from 'framer-motion';
+import { progressColorGen } from 'utils';
 
 const BaseStatsTab = ({ stats }) => {
   return (
@@ -26,8 +27,8 @@ const BaseStatsTab = ({ stats }) => {
                 <motion.span
                   initial={{ flex: 0, backgroundColor: '#ff5846' }}
                   animate={{
-                    flex: item.base_stat / 100,
-                    backgroundColor: item.base_stat >= 50 && '#3eba9e',
+                    flex: item.base_stat / 160,
+                    backgroundColor: progressColorGen(item.base_stat),
                   }}
                   transition={{ duration: 2, ease: 'anticipate', delay: 0.4 }}
                 ></motion.span>

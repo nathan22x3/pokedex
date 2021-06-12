@@ -20,34 +20,14 @@ const Header = ({ data }) => {
           <Heart size={30} weight='bold' />
         </span>
       </nav>
-      <motion.header
-        className={styles.header}
-        variants={animation.container}
-        initial='init'
-        animate='show'
-      >
-        <motion.span
-          className={styles.id}
-          variants={animation.id}
-          initial='init'
-          animate='show'
-        >
+      <motion.header className={styles.header} variants={animation.container}>
+        <motion.span className={styles.id} variants={animation.id}>
           {idFormatter(id)}
         </motion.span>
-        <motion.h1
-          className={styles.name}
-          variants={animation.name}
-          initial='init'
-          animate='show'
-        >
+        <motion.h1 className={styles.name} variants={animation.name}>
           {name}
         </motion.h1>
-        <motion.div
-          className={styles.types}
-          variants={animation.types}
-          initial='init'
-          animate='show'
-        >
+        <motion.div className={styles.types} variants={animation.types}>
           {types?.map(({ slot, type }) => (
             <motion.span key={slot} variants={animation.type}>
               {type.name}

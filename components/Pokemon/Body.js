@@ -7,24 +7,15 @@ import Tabs from '@components/Pokemon/Tabs';
 import { motion } from 'framer-motion';
 import React from 'react';
 import BaseStatsTab from './BaseStatsTab';
+import EvolutionTab from './EvolutionTab';
 
 const Body = ({ data }) => {
-  const { name, sprites, height, weight, abilities, breeding, stats } = data;
-  const { gender_rate, egg_groups, genera } = breeding;
+  const { name, sprites, height, weight, abilities, species, stats } = data;
+  const { gender_rate, egg_groups, genera, evolution_chain } = species;
 
   return (
-    <motion.main
-      className={styles.body}
-      variants={animation.container}
-      initial='init'
-      animate='show'
-    >
-      <motion.div
-        className={styles.image}
-        variants={animation.image}
-        initial='init'
-        animate='show'
-      >
+    <motion.main className={styles.body} variants={animation.container}>
+      <motion.div className={styles.image} variants={animation.image}>
         <Image
           src={sprites.other.dream_world.front_default}
           title={name}
@@ -32,18 +23,18 @@ const Body = ({ data }) => {
         />
       </motion.div>
       <Tabs>
-        <Tab label='about'>
+        <Tab label='About'>
           <AboutTab
             {...{ height, weight, abilities, gender_rate, egg_groups, genera }}
           />
         </Tab>
-        <Tab label='stats'>
+        <Tab label='Base Stats'>
           <BaseStatsTab {...{ stats }} />
         </Tab>
-        <Tab label='evolution'>
-          <span>Evolution</span>
+        <Tab label='Evolution'>
+          <EvolutionTab {...{ evolution_chain }}>Evolution</EvolutionTab>
         </Tab>
-        <Tab label='moves'>
+        <Tab label='Moves'>
           <span>Moves</span>
         </Tab>
       </Tabs>

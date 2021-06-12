@@ -17,24 +17,9 @@ export const genderRateFormatter = (value, gender) => {
   return `${gender === 'male' ? (8 - value) * 12.5 : value * 12.5}%`;
 };
 
-const colors = {
-  fairy: '#f85888',
-  fire: '#fb6c6c',
-  fighting: '#fc5849',
-  dragon: '#f5a018',
-  electric: '#f6c747',
-  grass: '#78c850',
-  normal: '#a8a878',
-  bug: '#48d0b0',
-  ice: '#7ac7ff',
-  water: '#429bed',
-  psychic: '#7c538c',
-  poison: '#9f5bba',
-  ghost: '#7038f8',
-  ground: '#795548',
-  rock: '#b1736c',
-  steel: '#bababa',
-  dark: '#303943',
+export const progressColorGen = (value) => {
+  if (value < 40) return '#fc5849';
+  else if (value >= 40 && value < 80) return '#f6c747';
+  else if (value >= 80 && value < 120) return '#3eba9e';
+  return '#78c850';
 };
-
-export const themeColorGenerator = (color) => colors[color];

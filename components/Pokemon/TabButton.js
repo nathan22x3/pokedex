@@ -1,5 +1,4 @@
 import styles from '@components/Pokemon/Pokemon.module.scss';
-import { capitalize } from 'utils';
 import { motion } from 'framer-motion';
 
 const TabButton = ({ label, isActive, onClick }) => {
@@ -10,7 +9,7 @@ const TabButton = ({ label, isActive, onClick }) => {
       }`}
       {...{ onClick }}
     >
-      <span>{capitalize(label)}</span>
+      <span>{label}</span>
       {isActive && (
         <motion.div
           layoutId={'indicator'}

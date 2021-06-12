@@ -6,7 +6,7 @@ const PokemonDetails = ({ data }) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await axios('https://pokeapi.co/api/v2/pokemon?limit=300');
+  const res = await axios('https://pokeapi.co/api/v2/pokemon?limit=100');
   const { results } = await res.data;
 
   const paths = results.map(({ name }) => ({
@@ -21,7 +21,7 @@ export const getStaticProps = async ({ params }) => {
     `https://pokeapi.co/api/v2/pokemon/${params.name}`
   );
 
-  const breeding = await axios(
+  const species = await axios(
     `https://pokeapi.co/api/v2/pokemon-species/${params.name}`
   );
 
@@ -29,7 +29,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       data: {
         pokemon: pokemon.data,
-        breeding: breeding.data,
+        species: species.data,
       },
     },
   };

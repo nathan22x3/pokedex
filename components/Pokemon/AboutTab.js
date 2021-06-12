@@ -74,7 +74,9 @@ const AboutTab = ({
             </div>
           </div>
           <span>
-            {egg_groups?.map(({ name }) => capitalize(name)).join(', ')}
+            {egg_groups
+              ?.map(({ name }) => capitalize(name).replace(/(\d)$/, ' $1'))
+              .join(', ')}
           </span>
           <span>???</span>
         </div>

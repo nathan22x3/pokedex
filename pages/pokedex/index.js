@@ -45,7 +45,7 @@ const Pokedex = ({ pokedex }) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await axios('https://pokeapi.co/api/v2/pokemon?limit=300');
+  const res = await axios('https://pokeapi.co/api/v2/pokemon?limit=2');
   const { results } = res.data;
 
   const pokedex = await Promise.all(

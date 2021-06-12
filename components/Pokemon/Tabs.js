@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import TabButton from '@components/Pokemon/TabButton';
-import styles from '@components/Pokemon/Pokemon.module.scss';
-import { AnimateSharedLayout, motion } from 'framer-motion';
 import { body as animation } from '@components/Pokemon/animation';
+import styles from '@components/Pokemon/Pokemon.module.scss';
+import TabButton from '@components/Pokemon/TabButton';
+import { AnimateSharedLayout, motion } from 'framer-motion';
+import { useState } from 'react';
 
 const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(children[0]?.props.label);
   const [content, setContent] = useState(children[0]?.props.children);
-  const buttons = ['about', 'stats', 'evolution', 'moves'];
+  const buttons = ['About', 'Base Stats', 'Evolution', 'Moves'];
 
   const handleChangeTab = (tab) => {
     setActiveTab(tab);

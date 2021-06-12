@@ -4,19 +4,15 @@ import Header from '@components/Pokemon/Header';
 import styles from '@components/Pokemon/Pokemon.module.scss';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import { capitalize, themeColorGenerator } from 'utils';
+import { capitalize } from 'utils';
 
-const Pokemon = ({ pokemon, breeding }) => {
+const Pokemon = ({ pokemon, species, evolution }) => {
   const { id, name, types, sprites, height, weight, abilities, stats } =
     pokemon;
 
   return (
     <>
       <Head>
-        <meta
-          name='theme-color'
-          content={themeColorGenerator(types[0].type.name)}
-        ></meta>
         <title>{capitalize(name)} | Pokedex</title>
       </Head>
 
@@ -30,7 +26,16 @@ const Pokemon = ({ pokemon, breeding }) => {
         <Header {...{ data: { id, name, types } }} />
         <Body
           {...{
-            data: { name, sprites, height, weight, abilities, breeding, stats },
+            data: {
+              name,
+              sprites,
+              height,
+              weight,
+              abilities,
+              species,
+              stats,
+              evolution,
+            },
           }}
         />
       </motion.div>
