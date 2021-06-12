@@ -1,43 +1,43 @@
-$clr-normal: #a8a878;
-$clr-grass: #78c850;
-$clr-fire: #fb6c6c;
-$clr-water: #429bed;
-$clr-electric: #f6c747;
-$clr-psychic: #7c538c;
-$clr-rock: #b1736c;
-$clr-bug: #48d0b0;
-$clr-poison: #9f5bba;
-$clr-ground: #795548;
 $clr-fairy: #f85888;
+$clr-fire: #fb6c6c;
 $clr-fighting: #fc5849;
-$clr-ghost: #7038f8;
-$clr-ice: #7ac7ff;
 $clr-dragon: #f5a018;
-$clr-dark: #303943;
+$clr-electric: #f6c747;
+$clr-grass: #78c850;
+$clr-normal: #a8a878;
+$clr-bug: #48d0b0;
+$clr-ice: #7ac7ff;
+$clr-water: #429bed;
+$clr-psychic: #7c538c;
+$clr-poison: #9f5bba;
+$clr-ghost: #7038f8;
+$clr-ground: #795548;
+$clr-rock: #b1736c;
 $clr-steel: #bababa;
+$clr-dark: #303943;
 
 $clr-label: #737373;
-$clr-input: #f5f5f5;
+$clr-input: #f4f4f4;
 $clr-link: #9da6e7;
 
 $types: (
-  normal: $clr-normal,
-  grass: $clr-grass,
-  fire: $clr-fire,
-  water: $clr-water,
-  electric: $clr-electric,
-  psychic: $clr-psychic,
-  rock: $clr-rock,
-  bug: $clr-bug,
-  poison: $clr-poison,
-  ground: $clr-ground,
   fairy: $clr-fairy,
+  fire: $clr-fire,
   fighting: $clr-fighting,
-  ghost: $clr-ghost,
-  ice: $clr-ice,
   dragon: $clr-dragon,
-  dark: $clr-dark,
+  electric: $clr-electric,
+  grass: $clr-grass,
+  normal: $clr-normal,
+  bug: $clr-bug,
+  ice: $clr-ice,
+  water: $clr-water,
+  psychic: $clr-psychic,
+  poison: $clr-poison,
+  ghost: $clr-ghost,
+  ground: $clr-ground,
+  rock: $clr-rock,
   steel: $clr-steel,
+  dark: $clr-dark,
 );
 
 // black = Color(#303943);
@@ -50,6 +50,5 @@ $types: (
 // whiteGrey = Color(#FDFDFD);
 // lightCyan = Color(#98D8D8);
 // lighterGrey = Color(#F4F5F4);
-// lightGrey = Color(#F5F5F5);
 // lightPink = Color(#EE99AC);
 // lilac = Color(#A890F0);

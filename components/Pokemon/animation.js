@@ -84,11 +84,16 @@ export const body = {
     },
   },
 
-  info: {
-    init: { opacity: 0, y: 50 },
+  tabContainer: {
+    init: { opacity: 0 },
     show: {
       opacity: 1,
-      y: 0,
+      transition: { duration: 0.75, ease: 'easeInOut', delay: 0.8 },
     },
+  },
+
+  content: {
+    init: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0 },
   },
 };

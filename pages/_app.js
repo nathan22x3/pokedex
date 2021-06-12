@@ -7,7 +7,7 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <meta
           name='viewport'
-          content='initial-scale=1, minimum-scale=1, maximum-scale=5, width=device-width, shrink-to-fit=no, viewport-fit=cover'
+          content='initial-scale=1, maximum-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover'
         />
       </Head>
       <Component {...pageProps} />

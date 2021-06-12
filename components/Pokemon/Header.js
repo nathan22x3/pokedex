@@ -11,21 +11,21 @@ const Header = ({ data }) => {
   const router = useRouter();
 
   return (
-    <motion.header
-      className={styles.header}
-      variants={animation.container}
-      initial='init'
-      animate='show'
-    >
-      <div>
+    <>
+      <nav className={styles.headerNav}>
         <span className={`button`} onClick={() => router.back()}>
           <ArrowLeft size={30} weight='bold' />
         </span>
         <span className={`button`}>
           <Heart size={30} weight='bold' />
         </span>
-      </div>
-      <div>
+      </nav>
+      <motion.header
+        className={styles.header}
+        variants={animation.container}
+        initial='init'
+        animate='show'
+      >
         <motion.span
           className={styles.id}
           variants={animation.id}
@@ -61,8 +61,8 @@ const Header = ({ data }) => {
         >
           <Image src={'/images/pokeball.svg'} title={'pokeball'} width={220} />
         </motion.div>
-      </div>
-    </motion.header>
+      </motion.header>
+    </>
   );
 };
 

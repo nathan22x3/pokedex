@@ -21,7 +21,7 @@ class Document extends NextDocument {
             sizes='32x32'
             href='/favicon-32x32.png'
           />
-          <meta name='theme-color' content='#FF1C1C' />
+          <meta name='theme-color' content='#FFFFFF' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
             href='https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap'

@@ -11,9 +11,15 @@
   background-color: $clr-input;
 
   input {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    width: 100%;
+
     border: none;
     outline: none;
     background-color: transparent;
+    overflow: hidden;
 
     &::placeholder {
       color: $clr-label;

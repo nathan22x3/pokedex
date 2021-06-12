@@ -1,18 +1,15 @@
 import Image from '@components/Image';
+import AboutTab from '@components/Pokemon/AboutTab';
 import { body as animation } from '@components/Pokemon/animation';
 import styles from '@components/Pokemon/Pokemon.module.scss';
+import Tab from '@components/Pokemon/Tab';
+import Tabs from '@components/Pokemon/Tabs';
 import { motion } from 'framer-motion';
 import React from 'react';
-import {
-  capitalize,
-  genderRateFormatter,
-  heightFormatter,
-  speciesFormatter,
-  weightFormatter,
-} from 'utils';
+import BaseStatsTab from './BaseStatsTab';
 
 const Body = ({ data }) => {
-  const { name, sprites, height, weight, abilities, breeding } = data;
+  const { name, sprites, height, weight, abilities, breeding, stats } = data;
   const { gender_rate, egg_groups, genera } = breeding;
 
   return (
@@ -34,69 +31,22 @@ const Body = ({ data }) => {
           width={200}
         />
       </motion.div>
-      <motion.section
-        variants={animation.info}
-        initial='init'
-        animate='show'
-        transition={{ duration: 0.75, ease: 'easeInOut', delay: 0.8 }}
-      >
-        <div className={styles.title}>
-          <span>Species</span>
-          <span>Height</span>
-          <span>Weight</span>
-          <span>Abilities</span>
-        </div>
-        <div className={styles.value}>
-          <span>{capitalize(speciesFormatter(genera[7].genus))}</span>
-          <span>{heightFormatter(height)}</span>
-          <span>{weightFormatter(weight)}</span>
-          <span>
-            {abilities
-              ?.map(({ ability }) => capitalize(ability.name))
-              .join(', ')}
-          </span>
-        </div>
-      </motion.section>
-      <motion.h3
-        variants={animation.info}
-        initial='init'
-        animate='show'
-        transition={{ duration: 0.75, ease: 'easeInOut', delay: 0.9 }}
-      >
-        Breeding
-      </motion.h3>
-      <motion.section
-        variants={animation.info}
-        initial='init'
-        animate='show'
-        transition={{ duration: 0.75, ease: 'easeInOut', delay: 1 }}
-      >
-        <div className={styles.title}>
-          <span>Gender</span>
-          <span>Egg Groups</span>
-          <span>Egg Cycle</span>
-        </div>
-        <div className={styles.value}>
-          <div className={styles.gender}>
-            <div>
-              <Image src={'/images/male.svg'} title='Male gender' width={18} />
-              <span>{genderRateFormatter(gender_rate, 'male')}</span>
-            </div>
-            <div>
-              <Image
-                src={'/images/female.svg'}
-                title='Female gender'
-                width={18}
-              />
-              <span>{genderRateFormatter(gender_rate, 'female')}</span>
-            </div>
-          </div>
-          <span>
-            {egg_groups?.map(({ name }) => capitalize(name)).join(', ')}
-          </span>
-          <span>???</span>
-        </div>
-      </motion.section>
+      <Tabs>
+        <Tab label='about'>
+          <AboutTab
+            {...{ height, weight, abilities, gender_rate, egg_groups, genera }}
+          />
+        </Tab>
+        <Tab label='stats'>
+          <BaseStatsTab {...{ stats }} />
+        </Tab>
+        <Tab label='evolution'>
+          <span>Evolution</span>
+        </Tab>
+        <Tab label='moves'>
+          <span>Moves</span>
+        </Tab>
+      </Tabs>
     </motion.main>
   );
 };
