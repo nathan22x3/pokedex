@@ -1,5 +1,5 @@
-import { body as animation } from '@components/Pokemon/animation';
 import styles from '@components/Pokemon/Pokemon.module.scss';
+import { body as variants } from '@variants/pokemon';
 import { motion } from 'framer-motion';
 import { progressColorGen } from 'utils';
 
@@ -8,7 +8,7 @@ const BaseStatsTab = ({ stats }) => {
     <>
       <motion.section
         className={styles.tabContent}
-        variants={animation.content}
+        variants={variants.content}
         transition={{ duration: 0.75, ease: 'easeInOut' }}
       >
         <div className={styles.title}>
@@ -27,7 +27,7 @@ const BaseStatsTab = ({ stats }) => {
                 <motion.span
                   initial={{ flex: 0, backgroundColor: '#ff5846' }}
                   animate={{
-                    flex: item.base_stat / 160,
+                    flex: item.base_stat / 200,
                     backgroundColor: progressColorGen(item.base_stat),
                   }}
                   transition={{ duration: 2, ease: 'anticipate', delay: 0.4 }}
@@ -38,7 +38,7 @@ const BaseStatsTab = ({ stats }) => {
         </div>
       </motion.section>
       <motion.h3
-        variants={animation.content}
+        variants={variants.content}
         transition={{ duration: 0.75, ease: 'easeInOut', delay: 0.1 }}
       >
         Type defenses

@@ -1,9 +1,9 @@
 import Image from '@components/Image';
 import AboutTab from '@components/Pokemon/AboutTab';
-import { body as animation } from '@components/Pokemon/animation';
 import styles from '@components/Pokemon/Pokemon.module.scss';
 import Tab from '@components/Pokemon/Tab';
 import Tabs from '@components/Pokemon/Tabs';
+import { body as variants } from '@variants/pokemon';
 import { motion } from 'framer-motion';
 import React from 'react';
 import BaseStatsTab from './BaseStatsTab';
@@ -14,8 +14,8 @@ const Body = ({ data }) => {
   const { gender_rate, egg_groups, genera, evolution_chain } = species;
 
   return (
-    <motion.main className={styles.body} variants={animation.container}>
-      <motion.div className={styles.image} variants={animation.image}>
+    <motion.main className={styles.body} variants={variants.container}>
+      <motion.div className={styles.image} variants={variants.image}>
         <Image
           src={sprites.other.dream_world.front_default}
           title={name}

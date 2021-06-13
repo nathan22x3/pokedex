@@ -1,5 +1,5 @@
-import { body as animation } from '@components/Pokemon/animation';
 import styles from '@components/Pokemon/Pokemon.module.scss';
+import { body as variants } from '@variants/pokemon';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -31,14 +31,14 @@ const EvolutionTab = ({ evolution_chain }) => {
   return (
     <>
       <motion.h3
-        variants={animation.content}
+        variants={variants.content}
         transition={{ duration: 0.75, ease: 'easeInOut' }}
       >
         Evolution Chain
       </motion.h3>
       <motion.section
         className={styles.tabContent}
-        variants={animation.content}
+        variants={variants.content}
         transition={{ duration: 0.75, ease: 'easeInOut' }}
       ></motion.section>
     </>

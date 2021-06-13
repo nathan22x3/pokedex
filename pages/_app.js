@@ -1,7 +1,8 @@
 import '@styles/globals.scss';
+import { AnimateSharedLayout } from 'framer-motion';
 import Head from 'next/head';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps, router }) => {
   return (
     <>
       <Head>
@@ -10,7 +11,9 @@ const App = ({ Component, pageProps }) => {
           content='initial-scale=1, maximum-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover'
         />
       </Head>
-      <Component {...pageProps} />
+      <AnimateSharedLayout>
+        <Component key={router.route} {...pageProps} />
+      </AnimateSharedLayout>
     </>
   );
 };

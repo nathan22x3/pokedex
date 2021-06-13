@@ -1,24 +1,15 @@
 export const pokemon = {
   container: {
     init: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    },
+    show: { opacity: 1, transition: { duration: 1 } },
+    exit: { opacity: 0, transition: { duration: 0.75 } },
   },
 };
 
 export const header = {
   container: {
     init: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    },
+    show: { opacity: 1, transition: { duration: 1 } },
   },
 
   name: {
@@ -46,7 +37,7 @@ export const header = {
   },
 
   types: {
-    init: {},
+    init: false,
     show: {
       transition: {
         staggerChildren: 0.2,

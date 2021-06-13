@@ -19,7 +19,8 @@ export const genderRateFormatter = (value, gender) => {
 
 export const progressColorGen = (value) => {
   if (value < 40) return '#fc5849';
-  else if (value >= 40 && value < 80) return '#f6c747';
-  else if (value >= 80 && value < 120) return '#3eba9e';
-  return '#78c850';
+  else if (value >= 40 && value < 80) return '#f5a018';
+  else if (value >= 80 && value < 120) return '#78c850';
+  else if (value >= 120 && value < 160) return '#429bed';
+  return '#7038f8';
 };

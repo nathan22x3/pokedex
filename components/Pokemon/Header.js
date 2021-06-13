@@ -1,6 +1,6 @@
 import Image from '@components/Image';
-import { header as animation } from '@components/Pokemon/animation';
 import styles from '@components/Pokemon/Pokemon.module.scss';
+import { header as variants } from '@variants/pokemon';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { ArrowLeft, Heart } from 'phosphor-react';
@@ -20,16 +20,16 @@ const Header = ({ data }) => {
           <Heart size={30} weight='bold' />
         </span>
       </nav>
-      <motion.header className={styles.header} variants={animation.container}>
-        <motion.span className={styles.id} variants={animation.id}>
+      <motion.header className={styles.header} variants={variants.container}>
+        <motion.span className={styles.id} variants={variants.id}>
           {idFormatter(id)}
         </motion.span>
-        <motion.h1 className={styles.name} variants={animation.name}>
+        <motion.h1 className={styles.name} variants={variants.name}>
           {name}
         </motion.h1>
-        <motion.div className={styles.types} variants={animation.types}>
+        <motion.div className={styles.types} variants={variants.types}>
           {types?.map(({ slot, type }) => (
-            <motion.span key={slot} variants={animation.type}>
+            <motion.span key={slot} variants={variants.type}>
               {type.name}
             </motion.span>
           ))}

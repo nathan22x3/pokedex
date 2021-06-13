@@ -4,6 +4,7 @@ import axios from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ArrowLeft, List } from 'phosphor-react';
+import { motion } from 'framer-motion';
 
 const Pokedex = ({ pokedex }) => {
   const router = useRouter();
@@ -14,15 +15,21 @@ const Pokedex = ({ pokedex }) => {
         <title>Pokedex</title>
       </Head>
 
-      <div className={styles.container}>
-        <header>
+      <motion.div
+        className={styles.container}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.75, ease: 'easeInOut' }}
+      >
+        <nav>
           <span className={`button`} onClick={() => router.back()}>
             <ArrowLeft size={30} weight='bold' />
           </span>
           <span className={`button`}>
             <List size={30} weight='bold' />
           </span>
-        </header>
+        </nav>
         <main>
           <h1>Pokedex</h1>
           <section className={styles.grid}>
@@ -39,7 +46,7 @@ const Pokedex = ({ pokedex }) => {
             ))}
           </section>
         </main>
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -49,8 +56,8 @@ export const getStaticProps = async () => {
   const { results } = res.data;
 
   const pokedex = await Promise.all(
-    results.map(async (item) => {
-      const res = await axios(item.url);
+    results.map(async ({ url }) => {
+      const res = await axios(url);
       const { data } = res;
       return data;
     })

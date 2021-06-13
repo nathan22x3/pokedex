@@ -43,7 +43,8 @@ a {
 
 @each $type, $value in $types {
   [data-color='#{$type}'] {
-    background-color: $value;
+    background-color: $value !important;
+
     &[class*='Button'] {
       box-shadow: 0 1.25rem 1.5rem -0.5rem rgba($value, 0.75);
     }

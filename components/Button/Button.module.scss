@@ -1,20 +1,14 @@
 @use '../styles/abstracts/colors' as *;
 
 $pokeball-size: 9rem;
-$types: (
-  grass: $clr-grass,
-  fire: $clr-fire,
-  water: $clr-water,
-  electric: $clr-electric,
-  psychic: $clr-psychic,
-  rock: $clr-rock,
-);
 
 .container {
   position: relative;
   display: block;
   padding: 2rem;
   border-radius: 1.5rem;
+
+  cursor: pointer;
   overflow: hidden;
 
   @mixin background-pattern {

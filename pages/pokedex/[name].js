@@ -25,6 +25,15 @@ export const getStaticProps = async ({ params }) => {
     `https://pokeapi.co/api/v2/pokemon-species/${params.name}`
   );
 
+  if (!pokemon || !species) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
       data: {

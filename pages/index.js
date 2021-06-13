@@ -2,6 +2,8 @@ import Button from '@components/Button';
 import Searchbar from '@components/Searchbar';
 import styles from '@styles/Home.module.scss';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
+import variants from '@variants/home';
 
 const Home = () => {
   return (
@@ -10,12 +12,21 @@ const Home = () => {
         <title>Home</title>
       </Head>
 
-      <main className={styles.container}>
+      <motion.main
+        className={styles.container}
+        variants={variants.container}
+        initial='init'
+        animate='show'
+        exit='exit'
+      >
         <h2>
           What Pokemon <br /> are you looking for?
         </h2>
         <Searchbar />
-        <section className={styles.categories}>
+        <motion.section
+          className={styles.categories}
+          variants={variants.buttons}
+        >
           <Button href='/pokedex' color='grass'>
             Pokedex
           </Button>
@@ -34,8 +45,8 @@ const Home = () => {
           <Button href='/type-charts' color='rock'>
             Type Charts
           </Button>
-        </section>
-      </main>
+        </motion.section>
+      </motion.main>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import Image from '@components/Image';
-import { body as animation } from '@components/Pokemon/animation';
 import styles from '@components/Pokemon/Pokemon.module.scss';
+import { body as variants } from '@variants/pokemon';
 import { motion } from 'framer-motion';
 import {
   capitalize,
@@ -22,7 +22,7 @@ const AboutTab = ({
     <>
       <motion.section
         className={styles.tabContent}
-        variants={animation.content}
+        variants={variants.content}
         transition={{ duration: 0.75, ease: 'easeInOut' }}
       >
         <div className={styles.title}>
@@ -43,14 +43,14 @@ const AboutTab = ({
         </div>
       </motion.section>
       <motion.h3
-        variants={animation.content}
+        variants={variants.content}
         transition={{ duration: 0.75, ease: 'easeInOut', delay: 0.1 }}
       >
         Breeding
       </motion.h3>
       <motion.section
         className={styles.tabContent}
-        variants={animation.content}
+        variants={variants.content}
         transition={{ duration: 0.75, ease: 'easeInOut', delay: 0.2 }}
       >
         <div className={styles.title}>
